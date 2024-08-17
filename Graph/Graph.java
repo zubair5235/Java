@@ -4,7 +4,6 @@ public class Graph {
 
     private static int V;
     private static LinkedList<Integer>[] adj;
-    private static int count = 0;
 
     Graph (int v) {
         V = v;
@@ -28,24 +27,6 @@ public class Graph {
              e = sc.nextInt();
              if (v == -1 || e == -1) {break;}
              addEdge(v, e);
-        }
-        print(0);
-        System.out.println(count);
-    }
-
-    public static void print(int s) {
-        boolean[] visited = new boolean[V];
-        Queue<Integer> q = new LinkedList<>();
-        visited[s] = true;
-        q.add(s);
-        while (!q.isEmpty()) {
-            s = q.poll();
-            if(s == 4) {break;}
-            count++;
-            System.out.print(s + " ");
-            for (int i : adj[s]) {
-                if(!visited[i]) {visited[i] = true; q.add(i);}
-            }
         }
     }
 }
